@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.stopError.MyBoard.mapper.AccountMapper">
+
+    <select id="getAccount" parameterType="String" resultType="com.stopError.MyBoard.domain.Account">
+        SELECT * FROM accounttable WHERE id=#{id};
+    </select>
+
+    <insert id="uploadAccount" parameterType="com.stopError.MyBoard.domain.Account">
+        INSERT INTO accounttable (id, pw, name, age, work, comment) values (#{id}, #{pw}, #{name}, #{age}, #{work}, #{comment});
+    </insert>
+
+    <update id="updateAccount" parameterType="com.stopError.MyBoard.domain.Account">
+        UPDATE accounttable set pw=#{pw}, name=#{name}, age=#{age}, work=#{work}, comment=#{comment} WHERE id=#{id};
+    </update>
+
+    <delete id="deleteAccount" parameterType="String">
+        DELETE * FROM accounttable WHERE id=#{id};
+    </delete>
+
+    <select id="loginAccount" parameterType="String" resultType="com.stopError.MyBoard.domain.Account">
+        SELECT * FROM accounttable WHERE id=#{id} and pw=#{pw};
+    </select>
+
+
+</mapper>

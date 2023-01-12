@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello!</title>
+</head>
+<body>
+<h1>안녕하세요!</h1>
+<p>Spring 연습 페이지입니다!</p>
+<form th:action="@{/board/main}" method="get">
+    <button type="submit">게시판</button>
+</form>
+<form th:action="@{/account/home}" method="get">
+    <button type="submit">계정</button>
+</form>
+</body>
+</html>

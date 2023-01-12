@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.stopError.MyBoard.mapper.BoardMapper">
+
+    <select id="boardCount" resultType="int">
+        SELECT count(id) AS cnt FROM tbl_board
+    </select>
+
+    <select id="getList" resultType="com.stopError.MyBoard.domain.Board">
+        SELECT * FROM tbl_board
+    </select>
+
+    <select id="getBoard" parameterType="Long" resultType="com.stopError.MyBoard.domain.Board">
+        SELECT * FROM tbl_board WHERE id=#{id}
+    </select>
+
+    <insert id="uploadBoard" parameterType="com.stopError.MyBoard.domain.Board">
+        INSERT INTO tbl_board (title, content, name) VALUES (#{title}, #{content}, #{name});
+    </insert>
+
+    <update id="updateBoard" parameterType="com.stopError.MyBoard.domain.Board">
+        UPDATE tbl_board SET title=#{title}, content=#{content} WHERE id=${id};
+    </update>
+
+    <delete id="deleteBoard" parameterType="Long">
+        DELETE FROM tbl_board WHERE id=${id};
+    </delete>
+
+    <update id="viewCount" parameterType="Long">
+        UPDATE tbl_board
+        SET viewCount = viewCount + 1
+        WHERE id=${id};
+    </update>
+
+</mapper>
