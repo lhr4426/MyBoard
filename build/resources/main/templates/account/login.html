@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:w="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+<h1>로그인 페이지</h1>
+<div class="container">
+  <form th:action="@{login}" method="post">
+    <input type="text" class="form-control" name="id" placeholder="아이디">
+    <input type="password" class="form-control" name="pw" placeholder="비밀번호">
+    <button type="submit">로그인</button>
+  </form>
+</div>
+
+</body>
+</html>

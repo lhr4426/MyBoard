@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:w="http://www.w3.org/1999/xhtml">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+  <form th:action="@{new}" method="post">
+    <input type="text" class="form-control" name="id" placeholder="아이디">
+    <input type="password" class="form-control" name="pw" placeholder="비밀번호">
+    <input type="text" class="form-control" name="name" placeholder="이름">
+    <input type="number" class="form-control" name="age" placeholder="나이">
+    <input type="text" class="form-control" name="work" placeholder="직업">
+    <textarea type="text" class="form-control" name="comment" placeholder="한줄소개"></textarea>
+    <button type="submit">생성</button>
+  </form>
+</div>
+
+</body>
+</html>

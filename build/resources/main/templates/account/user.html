@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:w="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>[[${find.name}]]의 프로필</title>
+</head>
+<body>
+<div class="container">
+  <p>아이디 : [[${find.id}]]</p>
+  <p>이름 : [[${find.name}]]</p>
+  <p>나이 : [[${find.age}]]</p>
+  <p>직업 : [[${find.work}]]</p>
+  한줄소개 : <div id="comment">
+  <textarea readonly="readonly"
+            class="form-control"
+            th:text="${find.comment}">
+  </textarea>
+</div>
+</div>
+<form th:action="@{/account/home}" method="get">
+    <button type="submit">이전으로</button>
+</form>
+</body>
+</html>
