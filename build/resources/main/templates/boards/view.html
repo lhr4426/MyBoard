@@ -6,6 +6,8 @@
     <title>Title</title>
 </head>
 <body>
+<th:block th:if="${session.loginUser != null}">
+    <div>
 <div class="container">
   <p>글 번호 : [[${halo.id}]]</p>
   <p id="title">제목 : [[${halo.title}]]</p>
@@ -31,6 +33,17 @@
 <form th:action="@{main}" method="get">
     <button type="submit">홈</button>
 </form>
+    </div>
+</th:block>
+
+<th:block th:if="${session.loginUser == null}">
+    <h1>게시판 기능은 로그인 후 이용 가능합니다.</h1>
+    <form th:action="@{/account/login}" method="get">
+        <button type="submit">로그인 하러가기</button>
+    </form>
+</th:block>
+
 
 </body>
+
 </html>
