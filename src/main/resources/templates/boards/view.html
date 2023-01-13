@@ -18,12 +18,12 @@
   <p>조회수 : [[${halo.viewCount}]]</p>
 </div>
 
-<form th:action="@{update}" method="get">
+<form th:if="${halo.userid == session.loginUser.id}" th:action="@{update}" method="get">
     <input type="hidden" name="id" th:value="${halo.id}">
     <button type="submit">수정</button>
 </form>
 
-<form th:action="@{delete}" method="get">
+<form th:if="${halo.userid == session.loginUser.id}" th:action="@{delete}" method="get">
     <input type="hidden" name="id" th:value="${halo.id}">
     <button type="submit">삭제</button>
 </form>

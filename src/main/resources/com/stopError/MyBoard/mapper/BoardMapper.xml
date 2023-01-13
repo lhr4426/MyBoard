@@ -16,7 +16,7 @@
     </select>
 
     <insert id="uploadBoard" parameterType="com.stopError.MyBoard.domain.Board">
-        INSERT INTO tbl_board (title, content, name) VALUES (#{title}, #{content}, #{name});
+        INSERT INTO tbl_board (title, content, name, userid) VALUES (#{title}, #{content}, #{name}, #{userid});
     </insert>
 
     <update id="updateBoard" parameterType="com.stopError.MyBoard.domain.Board">

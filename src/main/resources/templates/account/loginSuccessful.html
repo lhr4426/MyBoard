@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>로그인 성공</h1>
-<h2>[[${LoginId.id}]]님 안녕하세요!</h2>
+<h2>[[${session.loginUser.name}]]님 안녕하세요!</h2>
+<button type="button" onclick="location.href='/'">메인으로</button>
 </body>
 </html>

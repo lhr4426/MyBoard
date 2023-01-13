@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 public class Board {
     private Long id;
+    private String userid;
     private String title;
     private String content;
     private String name;

@@ -8,9 +8,12 @@
 <body>
 <div class="container">
   <form th:action="@{upload}" method="post">
-    <input type="text" class="form-control" name="name" placeholder="작성자">
+
     <input type="text" class="form-control" name="title" placeholder="제목">
     <textarea clss="form-control" name="content" placeholder="내용"></textarea>
+      <input type="hidden" class="form-control" name="name" th:value="${session.loginUser.name}">
+      <input type="hidden" name="userid" th:value="${session.loginUser.id}">
+
 
     <button type="submit">작성</button>
   </form>
